@@ -1,0 +1,58 @@
+#file name depends clusterGroupName in values-global.yaml
+
+# Variables for Charts/Playbooks
+mgmt:
+  cluster:
+    enableUnsealVault: false  
+
+clusterGroup:
+  name: hub
+  isHubCluster: true
+
+  # TODO: PR sent to common/. Will change behavior probably in the future
+  # mastersSchedulable: true
+
+  # TODO: PR sent to common/.
+  # nodes:
+  # - node00.example.com:
+  #     labels:
+  #       cluster.ocs.openshift.io/openshift-storage: ""
+  # - node01.example.com:
+  #     labels:
+  #       cluster.ocs.openshift.io/openshift-storage: ""
+  # - node02.example.com:
+  #     labels:
+  #       cluster.ocs.openshift.io/openshift-storage: ""
+
+  # namespaces:
+  # - app-test
+  # - metallb-system:
+  #     operatorGroup: true
+  #     targetNamespaces: null
+  #     labels:
+  #       openshift.io/cluster-monitoring: "true"
+  # - open-cluster-management:
+  #     operatorGroup: true
+
+
+  # subscriptions:
+  #   advanced-cluster-management:
+  #     name: advanced-cluster-management
+  #     namespace: open-cluster-management
+  #     channel: release-2.8
+  #     csv: advanced-cluster-management.v2.8.4
+
+  #   kubernetes-nmstate-operator:
+  #     name: kubernetes-nmstate-operator
+  #     namespace: openshift-nmstate  
+  #     channel: '"4.12"'
+  #     csv: kubernetes-nmstate-operator.4.12.0-202311220908
+
+  projects:
+  - hub
+
+  applications:
+    mcp:
+      name: mcp
+      path: charts/mgmt-hub/mcp
+      project: hub

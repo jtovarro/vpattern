@@ -1,0 +1,46 @@
+kind: CronJob
+apiVersion: batch/v1
+metadata:
+  name: mcp-unpause
+  namespace: imperative
+spec:
+  schedule: '@daily'
+  concurrencyPolicy: Allow
+  suspend: false
+  jobTemplate:
+    metadata:
+      creationTimestamp: null
+    spec:
+      template:
+        metadata:
+          creationTimestamp: null
+        spec:
+          containers:
+            - name: mcp-unpause
+              image: 'registry.redhat.io/openshift4/ose-tools-rhel8:latest'
+              args:
+                - /bin/sh
+                - '-c'
+                - |
+                  for node_type in master worker; do
+                    echo 'Applying machine configs...'
+                    oc patch --type=merge '--patch={"spec":{"paused":false}}' machineconfigpool/$node_type
+                    for try in `seq 1 5`; do
+                      oc wait mcp/$node_type --for condition=updated --timeout 7200s; sleep 5
+                      sleep 5
+                    done
+                    oc patch --type=merge '--patch={"spec":{"paused":true}}' machineconfigpool/$node_type
+                  done
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              imagePullPolicy: Always
+          restartPolicy: OnFailure
+          terminationGracePeriodSeconds: 30
+          dnsPolicy: ClusterFirst
+          serviceAccountName: imperative-sa
+          serviceAccount: imperative-sa
+          securityContext: {}
+          schedulerName: default-scheduler
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
