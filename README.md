@@ -1,8 +1,8 @@
-# Validated Pattern
+# Blank Pattern to configure OpenShift clusters
 
-This repository is in charge of applying day 2 configurations to the MANO cluster using Validated Pattern.
+[hub-blank-vpattern](https://github.com/jtovarro/hub-blank-vpattern) acts as a blank papper to easily customize and apply day 2 configurations to MANO clusters using the Validated Pattern Framework. 
 
-Validated Patterns are an evolution of how you deploy applications in a hybrid cloud. With a pattern, you can automatically deploy a full application stack through a GitOps-based framework. With this framework, you can create business-centric solutions while maintaining a level of Continuous Integration (CI) over your application.
+Validated patterns are living code architectures for different edge computing and hybrid cloud use cases. They're created by using Helm Charts, a collection of files that describe a set of related Kubernetes resources.
 
 ## How to start working
 
