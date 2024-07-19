@@ -3,7 +3,10 @@
 # Variables for Charts/Playbooks
 mgmt:
   cluster:
-    enableUnsealVault: false  
+    enableUnsealVault: false
+
+  example:
+    name: mcp-unpause 
 
 clusterGroup:
   name: hub
@@ -52,7 +55,7 @@ clusterGroup:
   - hub
 
   applications:
-    mcp:
-      name: mcp
-      path: charts/mgmt-hub/mcp
+    example:
+      name: example
+      path: charts/mgmt-hub/example
       project: hub

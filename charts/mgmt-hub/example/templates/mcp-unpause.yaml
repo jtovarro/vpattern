@@ -1,7 +1,7 @@
 kind: CronJob
 apiVersion: batch/v1
 metadata:
-  name: mcp-unpause
+  name: {{ .Values.mgmt.example.name }}
   namespace: imperative
 spec:
   schedule: '@daily'
