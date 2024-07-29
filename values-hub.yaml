@@ -5,7 +5,11 @@ mgmt:
   cluster:
     enableUnsealVault: false
 
-  example:
+  authentication:
+    htpasswd:
+      admin: "$apr1$d.KfPG6w$wwrfp9d22Fe6GaC33wMYJ."
+
+  mcp:
     name: mcp-unpause 
 
 clusterGroup:
@@ -55,7 +59,13 @@ clusterGroup:
   - hub
 
   applications:
+    authentication:
+      name: authentication
+      namespace: openshift-config
+      path: charts/mgmt-hub/authentication
+      project: hub
+
     example:
-      name: example
-      path: charts/mgmt-hub/example
+      name: mcp
+      path: charts/mgmt-hub/mcp
       project: hub
