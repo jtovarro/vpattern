@@ -7,7 +7,7 @@ metadata:
 spec:
   clusterGroupName: hub
   gitSpec:
-    targetRepo: ""
+    targetRepo: https://github.com/jtovarro/hub-blank-vpattern.git
     targetRevision: gmbros
   gitOpsSpec:
     operatorChannel: gitops-1.11

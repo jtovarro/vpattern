@@ -50,7 +50,7 @@
       ansible.builtin.lineinfile:
         path: vpatterns/pattern-crd.yaml
         regexp: 'targetRepo'
-        line: "    targetRepo: https://github.com/{{ user }}/hub-blank-vpattern.git"
+        line: "    targetRepo: https://github.com/{{ user }}/vpattern.git"
 
     - name: Create a resource by reading the definition from Pattern CRD
       kubernetes.core.k8s:
