@@ -70,7 +70,7 @@ clusterGroup:
       path: charts/mgmt-hub/mcp
       project: hub
 
-    nginx:
-      name: nginx
-      path: charts/mgmt-hub/nginx
+    hello-world:
+      name: hello-world
+      path: charts/mgmt-hub/hello-world
       project: hub
