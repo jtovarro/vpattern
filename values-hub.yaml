@@ -31,8 +31,8 @@ clusterGroup:
   #     labels:
   #       cluster.ocs.openshift.io/openshift-storage: ""
 
-  # namespaces:
-  # - app-test
+  namespaces:
+    - hello-world
   # - metallb-system:
   #     operatorGroup: true
   #     targetNamespaces: null
