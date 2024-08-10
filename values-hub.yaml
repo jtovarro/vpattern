@@ -72,5 +72,6 @@ clusterGroup:
 
     hello-world:
       name: hello-world
+      namespace: hello-world
       path: charts/mgmt-hub/hello-world
       project: hub
