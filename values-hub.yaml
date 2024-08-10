@@ -65,7 +65,12 @@ clusterGroup:
       path: charts/mgmt-hub/authentication
       project: hub
 
-    example:
+    mcp:
       name: mcp
       path: charts/mgmt-hub/mcp
+      project: hub
+
+    nginx:
+      name: nginx
+      path: charts/mgmt-hub/nginx
       project: hub
