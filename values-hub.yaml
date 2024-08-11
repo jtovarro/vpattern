@@ -71,10 +71,10 @@ clusterGroup:
       path: charts/mgmt-hub/mcp
       project: hub
 
-    nginx:
-      name: nginx
+    hello-kustomize:
+      name: hello-kustomize
       kustomize: true
-      path: charts/mgmt-hub/nginx/base
+      path: charts/mgmt-hub/hello-kustomize/base
       project: hub
 
     hello-world:

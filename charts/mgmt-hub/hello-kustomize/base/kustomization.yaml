@@ -1,0 +1,8 @@
+namespace: nginx
+
+resources:
+- hello-world-deployment.yaml
+- hello-world-svc.yaml
+- hello-world-route.yaml
+- hello-world-cm.yaml
+
