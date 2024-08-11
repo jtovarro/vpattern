@@ -1,4 +1,12 @@
 namespace: nginx
+
 resources:
 - deployment.yaml
 - service.yaml
+
+vars:
+- name: MY_SERVICE_NAME
+  objref:
+    kind: Service
+    name: my-nginx
+    apiVersion: v1
