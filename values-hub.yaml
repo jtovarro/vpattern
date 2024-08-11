@@ -33,6 +33,7 @@ clusterGroup:
 
   namespaces:
     - hello-world
+    - nginx
   # - metallb-system:
   #     operatorGroup: true
   #     targetNamespaces: null
@@ -68,6 +69,12 @@ clusterGroup:
     mcp:
       name: mcp
       path: charts/mgmt-hub/mcp
+      project: hub
+
+    nginx:
+      name: nginx
+      kustomize: true
+      path: charts/mgmt-hub/nginx/base
       project: hub
 
     hello-world:
