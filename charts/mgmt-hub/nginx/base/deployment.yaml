@@ -15,4 +15,6 @@ spec:
       containers:
       - name: my-nginx
         image: nginx
-        command: ["start", "--host", "$(MY_SERVICE_NAME)"]
+        ports:
+        - containerPort: 80
+
